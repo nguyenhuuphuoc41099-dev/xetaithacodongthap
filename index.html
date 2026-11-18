@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+<meta name="google-site-verification" content="tJ1C93ZkzJ1GT8I8VGJt86Fx7OTe-NAtiKu9BHBeQLc" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THACO AUTO ĐỒNG THÁP - Đại Lý Xe Tải Chính Hãng | Hotline: 0911 828 846</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        thaco: {
+                            blue: '#004B8D',
+                            dark: '#003366',
+                            light: '#EBF3FA',
+                            red: '#E63946',
+                            redHover: '#C92A37'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-thaco-blue selection:text-white">
+
+    <!-- ==================== TOP BAR ==================== -->
+    <div class="bg-thaco-dark text-white text-xs sm:text-sm py-2 px-4 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-location-dot text-thaco-red mr-1.5"></i> Showroom Thaco Auto Đồng Tháp - Giao xe tận nơi toàn tỉnh</span>
+                <span><i class="fa-solid fa-clock text-sky-300 mr-1.5"></i> Thứ 2 - Chủ Nhật: 07:30 - 17:30</span>
+            </div>
+            <div class="flex items-center space-x-4 font-medium">
+                <span class="text-sky-200">Hỗ trợ trả góp lên đến 75% - Duyệt hồ sơ 24h</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== HEADER / NAVIGATION ==================== -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Logo Thaco Auto -->
+                <a href="#trang-chu" class="flex items-center space-x-3 group">
+                    <div class="bg-thaco-blue text-white font-extrabold px-3 py-1.5 rounded-lg tracking-wider text-lg sm:text-xl shadow-sm group-hover:bg-thaco-dark transition">
+                        THACO <span class="font-light text-sky-200">AUTO</span>
+                    </div>
+                    <div class="hidden sm:block border-l border-slate-200 pl-3">
+                        <p class="text-xs font-bold text-thaco-blue uppercase tracking-wide">Chi Nhánh Đồng Tháp</p>
+                        <p class="text-[11px] text-slate-500">Xe Tải & Bus Chính Hãng</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8 font-semibold text-slate-700">
+                    <a href="#trang-chu" class="hover:text-thaco-blue transition py-2">Trang chủ</a>
+                    <a href="#dong-xe" class="hover:text-thaco-blue transition py-2">Dòng xe</a>
+                    <a href="#tra-gop" class="hover:text-thaco-blue transition py-2">Bảng giá & Trả góp</a>
+                    <a href="#cam-ket" class="hover:text-thaco-blue transition py-2">Dịch vụ</a>
+                    <a href="#lien-he" class="hover:text-thaco-blue transition py-2">Liên hệ</a>
+                </nav>
+
+                <!-- Hotline CTA & Mobile Menu Button -->
+                <div class="flex items-center space-x-3">
+                    <a href="tel:0911828846" class="inline-flex items-center bg-thaco-red hover:bg-thaco-redHover text-white font-bold px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-md hover:shadow-lg transition transform active:scale-95 text-sm sm:text-base">
+                        <i class="fa-solid fa-phone-volume mr-2 animate-pulse"></i>
+                        <span>0911 828 846</span>
+                    </a>
+                    <button id="mobile-menu-btn" aria-label="Mở menu" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-5 space-y-2 shadow-lg">
+            <a href="#trang-chu" class="mobile-link block px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-thaco-light hover:text-thaco-blue">Trang chủ</a>
+            <a href="#dong-xe" class="mobile-link block px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-thaco-light hover:text-thaco-blue">Dòng xe tải Thaco</a>
+            <a href="#tra-gop" class="mobile-link block px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-thaco-light hover:text-thaco-blue">Bảng giá & Dự toán trả góp</a>
+            <a href="#cam-ket" class="mobile-link block px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-thaco-light hover:text-thaco-blue">Cam kết dịch vụ</a>
+            <a href="#lien-he" class="mobile-link block px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-thaco-light hover:text-thaco-blue">Liên hệ tư vấn</a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="trang-chu" class="relative bg-gradient-to-br from-thaco-dark via-thaco-blue to-sky-800 text-white overflow-hidden">
+        <!-- Decorative Background Pattern -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <polygon fill="white" points="0,100 100,0 100,100"/>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-sm border border-white/20 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-sky-100">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                        <span>ĐẠI LÝ CHÍNH HÃNG TẠI ĐỒNG THÁP</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+                        Giải Pháp Vận Tải Tối Ưu <br class="hidden sm:inline">
+                        <span class="text-amber-300">Bền Bỉ & Kinh Tế</span> Tại Đồng Tháp
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Phân phối đầy đủ các dòng xe tải nhẹ, tải trung thế hệ mới: <strong>Thaco Frontier, Towner, Kia K200/K250, Thaco Linker, Mitsubishi Fuso Canter</strong>. Sẵn xe giao ngay - Đóng thùng theo yêu cầu.
+                    </p>
+
+                    <!-- Key Highlights Pills -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 max-w-2xl mx-auto lg:mx-0">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-3 border border-white/15 flex items-center justify-center lg:justify-start space-x-2.5">
+                            <i class="fa-solid fa-percent text-amber-300 text-lg"></i>
+                            <span class="text-sm font-semibold">Trả góp đến 75%</span>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-3 border border-white/15 flex items-center justify-center lg:justify-start space-x-2.5">
+                            <i class="fa-solid fa-truck-fast text-emerald-300 text-lg"></i>
+                            <span class="text-sm font-semibold">Giao xe tận nhà</span>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-3 border border-white/15 flex items-center justify-center lg:justify-start space-x-2.5">
+                            <i class="fa-solid fa-file-signature text-sky-300 text-lg"></i>
+                            <span class="text-sm font-semibold">Đăng kiểm trọn gói</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-3">
+                        <button onclick="openQuoteModal('Tư vấn chọn dòng xe phù hợp')" class="w-full sm:w-auto bg-thaco-red hover:bg-thaco-redHover text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-red-950/30 transition transform hover:-translate-y-0.5 flex items-center justify-center space-x-2 text-base">
+                            <i class="fa-solid fa-calculator"></i>
+                            <span>NHẬN BÁO GIÁ LĂN BÁNH</span>
+                        </button>
+                        <a href="#dong-xe" class="w-full sm:w-auto bg-white text-thaco-blue hover:bg-sky-50 font-bold px-8 py-4 rounded-xl shadow-md transition flex items-center justify-center space-x-2 text-base">
+                            <span>XEM CÁC DÒNG XE</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Illustration Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+                        <div class="bg-gradient-to-b from-sky-100 to-white rounded-2xl p-6 text-slate-800 shadow-inner">
+                            <!-- Custom SVG Truck Graphic -->
+                            <svg viewBox="0 0 400 210" class="w-full h-auto drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Road -->
+                                <rect x="10" y="182" width="380" height="6" rx="3" fill="#CBD5E1"/>
+                                <!-- Cargo Box (Thùng kín/mui bạt) -->
+                                <rect x="35" y="45" width="210" height="110" rx="8" fill="#004B8D"/>
+                                <rect x="43" y="53" width="194" height="94" rx="4" fill="#005BAA" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="6 4"/>
+                                <text x="140" y="96" fill="#FFFFFF" font-family="Inter, sans-serif" font-weight="800" font-size="22" text-anchor="middle" letter-spacing="2">THACO AUTO</text>
+                                <text x="140" y="118" fill="#BAE6FD" font-family="Inter, sans-serif" font-weight="600" font-size="11" text-anchor="middle">ĐỒNG THÁP • 0911 828 846</text>
+                                <!-- Chassis -->
+                                <rect x="30" y="155" width="325" height="12" rx="4" fill="#1E293B"/>
+                                <!-- Cabin -->
+                                <path d="M250 68 L312 68 C324 68 332 76 338 92 L354 122 C358 130 360 138 360 148 L360 158 L250 158 Z" fill="#F8FAFC" stroke="#004B8D" stroke-width="3"/>
+                                <!-- Windshield -->
+                                <path d="M286 76 L310 76 C318 76 324 82 329 94 L338 114 L286 114 Z" fill="#0284C7"/>
+                                <!-- Side Window -->
+                                <rect x="258" y="76" width="22" height="38" rx="3" fill="#0369A1"/>
+                                <!-- Headlight & Bumper -->
+                                <rect x="348" y="132" width="12" height="14" rx="3" fill="#FBBF24"/>
+                                <rect x="344" y="148" width="20" height="12" rx="4" fill="#E63946"/>
+                                <!-- Rear Wheel -->
+                                <circle cx="95" cy="167" r="22" fill="#0F172A"/>
+                                <circle cx="95" cy="167" r="11" fill="#94A3B8"/>
+                                <circle cx="95" cy="167" r="4" fill="#334155"/>
+                                <!-- Front Wheel -->
+                                <circle cx="312" cy="167" r="22" fill="#0F172A"/>
+                                <circle cx="312" cy="167" r="11" fill="#94A3B8"/>
+                                <circle cx="312" cy="167" r="4" fill="#334155"/>
+                            </svg>
+
+                            <div class="mt-4 pt-4 border-t border-slate-200 flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs font-bold uppercase text-thaco-blue tracking-wider">Ưu đãi tháng này</span>
+                                    <p class="text-sm font-bold text-slate-800">Tặng 100% Phí Trước Bạ & Bảo Hiểm</p>
+                                </div>
+                                <span class="bg-red-100 text-thaco-red text-xs font-extrabold px-3 py-1.5 rounded-lg">HOT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRODUCT CATALOG SECTION ==================== -->
+    <section id="dong-xe" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <span class="text-thaco-blue font-bold text-sm uppercase tracking-widest">Danh Mục Sản Phẩm</span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">Các Dòng Xe Tải Thaco Bán Chạy</h2>
+            <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                Đa dạng tải trọng từ 750kg đến 3.5 tấn, đầy đủ các loại thùng: Thùng lửng, Thùng mui bạt, Thùng kín, Thùng đông lạnh và Thùng chuyên dụng.
+            </p>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-10" id="filter-container">
+            <button data-filter="all" class="filter-btn active bg-thaco-blue text-white font-semibold px-5 py-2.5 rounded-full text-sm shadow-sm transition cursor-pointer">
+                Tất cả dòng xe
+            </button>
+            <button data-filter="frontier-towner" class="filter-btn bg-white text-slate-700 hover:bg-thaco-light border border-slate-200 font-semibold px-5 py-2.5 rounded-full text-sm transition cursor-pointer">
+                Thaco Frontier / Towner
+            </button>
+            <button data-filter="kia" class="filter-btn bg-white text-slate-700 hover:bg-thaco-light border border-slate-200 font-semibold px-5 py-2.5 rounded-full text-sm transition cursor-pointer">
+                Kia Frontier (K200 / K250)
+            </button>
+            <button data-filter="linker-fuso" class="filter-btn bg-white text-slate-700 hover:bg-thaco-light border border-slate-200 font-semibold px-5 py-2.5 rounded-full text-sm transition cursor-pointer">
+                Thaco Linker / Fuso Canter
+            </button>
+        </div>
+
+        <!-- Truck Cards Grid -->
+        <div id="truck-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Cards rendered dynamically via JS -->
+        </div>
+    </section>
+
+    <!-- ==================== INSTALLMENT CALCULATOR SECTION ==================== -->
+    <section id="tra-gop" class="py-16 sm:py-20 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-thaco-blue font-bold text-sm uppercase tracking-widest">Tài Chính Linh Hoạt</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">Công Cụ Dự Toán Trả Góp Xe Tải</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    Ước tính nhanh khoản tiền trả trước và số tiền góp hàng tháng. Hỗ trợ vay ngân hàng lên đến 75% giá trị xe, thủ tục đơn giản tại Đồng Tháp.
+                </p>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Inputs Column -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <!-- Select Quick Truck or Custom Price -->
+                        <div>
+                            <label for="calc-truck-select" class="block text-sm font-bold text-slate-700 mb-2">
+                                Chọn nhanh dòng xe tham khảo (hoặc tự nhập giá bên dưới):
+                            </label>
+                            <select id="calc-truck-select" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-thaco-blue">
+                                <option value="224000000">Thaco Frontier TF220 (990kg) - 224.000.000 đ</option>
+                                <option value="249000000">Thaco Frontier TF230 (990kg) - 249.000.000 đ</option>
+                                <option value="215000000">Thaco Towner 800A (900kg) - 215.000.000 đ</option>
+                                <option value="395000000" selected>Kia Frontier K200 (1.9 Tấn) - 395.000.000 đ</option>
+                                <option value="455000000">Kia Frontier K250 (2.49 Tấn) - 455.000.000 đ</option>
+                                <option value="468000000">Thaco Linker T2-3.5 (1.9 - 3.5 Tấn) - 468.000.000 đ</option>
+                                <option value="645000000">Mitsubishi Fuso Canter TF4.9 (1.99 Tấn) - 645.000.000 đ</option>
+                            </select>
+                        </div>
+
+                        <!-- Vehicle Price Input -->
+                        <div>
+                            <label for="calc-price" class="block text-sm font-bold text-slate-700 mb-2">
+                                Giá trị xe dự kiến (VNĐ):
+                            </label>
+                            <div class="relative">
+                                <input type="number" id="calc-price" value="395000000" step="1000000" min="100000000" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-lg font-bold text-thaco-blue focus:outline-none focus:ring-2 focus:ring-thaco-blue">
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-sm">VNĐ</span>
+                            </div>
+                        </div>
+
+                        <!-- Down Payment Percentage Slider -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="calc-down-percent" class="text-sm font-bold text-slate-700">Tỷ lệ trả trước (%):</label>
+                                <span id="down-percent-label" class="bg-thaco-blue text-white text-xs font-bold px-3 py-1 rounded-full">30% (Vay 70%)</span>
+                            </div>
+                            <input type="range" id="calc-down-percent" min="25" max="80" step="5" value="30" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-thaco-blue">
+                            <div class="flex justify-between text-xs text-slate-500 mt-1">
+                                <span>Tối thiểu 25%</span>
+                                <span>50%</span>
+                                <span>80%</span>
+                            </div>
+                        </div>
+
+                        <!-- Loan Term & Interest Rate -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="calc-years" class="block text-sm font-bold text-slate-700 mb-2">Thời gian vay (Năm):</label>
+                                <select id="calc-years" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-800 font-semibold focus:outline-none focus:ring-2 focus:ring-thaco-blue">
+                                    <option value="2">2 năm (24 tháng)</option>
+                                    <option value="3">3 năm (36 tháng)</option>
+                                    <option value="4">4 năm (48 tháng)</option>
+                                    <option value="5" selected>5 năm (60 tháng)</option>
+                                    <option value="6">6 năm (72 tháng)</option>
+                                    <option value="7">7 năm (84 tháng)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="calc-rate" class="block text-sm font-bold text-slate-700 mb-2">Lãi suất ước tính (%/năm):</label>
+                                <input type="number" id="calc-rate" value="8.5" step="0.1" min="1" max="20" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-800 font-semibold focus:outline-none focus:ring-2 focus:ring-thaco-blue">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results Column -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-gradient-to-br from-thaco-dark to-thaco-blue text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-5">
+                            <div class="border-b border-white/15 pb-4">
+                                <p class="text-sky-200 text-xs uppercase font-bold tracking-wider">Kết quả dự toán tham khảo</p>
+                                <h3 class="text-xl font-bold mt-1">Chi Tiết Khoản Vay Ngân Hàng</h3>
+                            </div>
+
+                            <div class="space-y-3.5 text-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sky-100">Số tiền trả trước:</span>
+                                    <span id="res-down-amount" class="font-bold text-lg text-white">118.500.000 đ</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sky-100">Số tiền ngân hàng cho vay:</span>
+                                    <span id="res-loan-amount" class="font-bold text-base text-sky-200">276.500.000 đ</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sky-100">Tiền gốc trả hàng tháng:</span>
+                                    <span id="res-monthly-principal" class="font-semibold text-white">4.608.333 đ</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sky-100">Tiền lãi tháng đầu (dư nợ giảm dần):</span>
+                                    <span id="res-first-interest" class="font-semibold text-white">1.958.542 đ</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-white/10 border border-white/20 rounded-xl p-4 mt-2">
+                                <p class="text-xs text-sky-200 uppercase font-semibold">Tổng gốc + lãi tháng đầu tiên:</p>
+                                <p id="res-total-first-month" class="text-2xl sm:text-3xl font-extrabold text-amber-300 mt-1">6.566.875 đ</p>
+                                <p class="text-[11px] text-sky-200 mt-1">* Tiền góp giảm dần theo từng tháng trên dư nợ thực tế.</p>
+                            </div>
+
+                            <button onclick="openQuoteModal('Tư vấn bảng tính trả góp chi tiết')" class="w-full bg-thaco-red hover:bg-thaco-redHover text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>NHẬN BẢNG TÍNH CHI TIẾT QUA ZALO</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICE COMMITMENTS SECTION ==================== -->
+    <section id="cam-ket" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-thaco-blue font-bold text-sm uppercase tracking-widest">Tại Sao Chọn Thaco Auto</span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">Cam Kết Dịch Vụ Vàng Dành Cho Khách Hàng</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Item 1 -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition group">
+                <div class="w-14 h-14 rounded-2xl bg-thaco-light text-thaco-blue group-hover:bg-thaco-blue group-hover:text-white flex items-center justify-center text-2xl mb-5 transition">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Bảo Hành Chính Hãng Toàn Quốc</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Hệ thống xưởng dịch vụ & phụ tùng chính hãng phủ khắp 63 tỉnh thành, bảo hành lên đến 3 năm hoặc 100.000 km.
+                </p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition group">
+                <div class="w-14 h-14 rounded-2xl bg-thaco-light text-thaco-blue group-hover:bg-thaco-blue group-hover:text-white flex items-center justify-center text-2xl mb-5 transition">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Đóng Thùng Theo Yêu Cầu</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Xưởng đóng thùng tiêu chuẩn nhà máy Thaco: thùng lửng, mui bạt, thùng kín, bửng nâng, cánh dơi, đông lạnh đạt chuẩn Cục Đăng Kiểm.
+                </p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition group">
+                <div class="w-14 h-14 rounded-2xl bg-thaco-light text-thaco-blue group-hover:bg-thaco-blue group-hover:text-white flex items-center justify-center text-2xl mb-5 transition">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Duyệt Ngân Hàng Trong 24h</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Liên kết tất cả ngân hàng lớn, hỗ trợ vay 70% - 75% giá trị xe, lãi suất ưu đãi, không cần chứng minh thu nhập phức tạp.
+                </p>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition group">
+                <div class="w-14 h-14 rounded-2xl bg-thaco-light text-thaco-blue group-hover:bg-thaco-blue group-hover:text-white flex items-center justify-center text-2xl mb-5 transition">
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Đăng Ký Đăng Kiểm Trọn Gói</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Hỗ trợ bấm biển số, đóng thuế trước bạ, đăng kiểm lưu hành và giao xe tận nhà cho quý khách tại Đồng Tháp & lân cận.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="lien-he" class="bg-slate-900 text-slate-300 pt-16 pb-24 sm:pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+                <!-- Brand Info -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="inline-block bg-thaco-blue text-white font-extrabold px-4 py-2 rounded-lg tracking-wider text-xl">
+                        THACO <span class="font-light text-sky-200">AUTO</span>
+                    </div>
+                    <h3 class="text-white font-bold text-lg">Showroom Xe Tải & Bus Thaco Đồng Tháp</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Chuyên tư vấn, cung cấp các dòng xe tải nhẹ, xe tải trung, xe ben và xe chuyên dụng chính hãng Thaco tại Cao Lãnh, Sa Đéc, Hồng Ngự và toàn tỉnh Đồng Tháp.
+                    </p>
+                    <div class="space-y-2.5 pt-2 text-sm">
+                        <p class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-thaco-red mt-1"></i>
+                            <span>Tỉnh Đồng Tháp (Hỗ trợ xem xe, lái thử & ký hợp đồng tận nơi)</span>
+                        </p>
+                        <p class="flex items-center space-x-3">
+                            <i class="fa-solid fa-phone text-emerald-400"></i>
+                            <span>Hotline / Zalo Tư Vấn 24/7: <a href="tel:0911828846" class="text-white font-bold hover:text-amber-300 text-base">0911 828 846</a></span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="text-white font-bold text-base uppercase tracking-wider mb-4">Dòng Xe Nổi Bật</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#dong-xe" class="hover:text-white transition"><i class="fa-solid fa-angle-right text-thaco-blue mr-2"></i>Thaco Frontier TF220 / TF230</a></li>
+                        <li><a href="#dong-xe" class="hover:text-white transition"><i class="fa-solid fa-angle-right text-thaco-blue mr-2"></i>Thaco Towner 800A / 990</a></li>
+                        <li><a href="#dong-xe" class="hover:text-white transition"><i class="fa-solid fa-angle-right text-thaco-blue mr-2"></i>Kia Frontier K200 / K250</a></li>
+                        <li><a href="#dong-xe" class="hover:text-white transition"><i class="fa-solid fa-angle-right text-thaco-blue mr-2"></i>Thaco Linker T2-3.5 / T2-5.0</a></li>
+                        <li><a href="#dong-xe" class="hover:text-white transition"><i class="fa-solid fa-angle-right text-thaco-blue mr-2"></i>Mitsubishi Fuso Canter</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Consultation Box -->
+                <div class="lg:col-span-4">
+                    <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6">
+                        <h4 class="text-white font-bold text-base mb-2">Đăng Ký Nhận Báo Giá Nhanh</h4>
+                        <p class="text-xs text-slate-400 mb-4">Để lại số điện thoại, Chuyên viên tư vấn Thaco Đồng Tháp sẽ gọi lại báo giá lăn bánh tốt nhất ngay!</p>
+                        <form id="footer-quote-form" class="space-y-3">
+                            <input type="text" required placeholder="Họ và tên anh/chị *" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-400">
+                            <input type="tel" required placeholder="Số điện thoại / Zalo *" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-400">
+                            <button type="submit" class="w-full bg-thaco-red hover:bg-thaco-redHover text-white font-bold py-3 rounded-xl text-sm transition shadow-md">
+                                GỬI YÊU CẦU TƯ VẤN
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Tư Vấn Bán Hàng Xe Tải Thaco Auto Đồng Tháp. All rights reserved.</p>
+                <p>Giá xe trên website mang tính chất tham khảo, vui lòng liên hệ <strong class="text-slate-300">0911 828 846</strong> để nhận khuyến mãi mới nhất.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING ACTION BUTTONS (ZALO & CALL) ==================== -->
+    <div class="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col space-y-3">
+        <!-- Zalo Button -->
+        <a href="https://zalo.me/0911828846" target="_blank" rel="noopener noreferrer" aria-label="Chat Zalo 0911 828 846" class="group flex items-center bg-[#0068FF] hover:bg-[#0054CC] text-white p-3 sm:px-4 sm:py-3 rounded-full shadow-lg shadow-blue-900/30 transition transform hover:scale-105">
+            <span class="font-extrabold text-sm bg-white text-[#0068FF] px-2 py-0.5 rounded-full">Zalo</span>
+            <span class="hidden sm:inline-block ml-2.5 font-bold text-sm">Chat Zalo Ngay</span>
+        </a>
+
+        <!-- Phone Call Button -->
+        <a href="tel:0911828846" aria-label="Gọi ngay 0911 828 846" class="flex items-center bg-thaco-red hover:bg-thaco-redHover text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-lg shadow-red-900/40 transition transform hover:scale-105">
+            <i class="fa-solid fa-phone-volume text-lg animate-bounce"></i>
+            <span class="hidden sm:inline-block ml-2.5 font-bold text-sm">0911 828 846</span>
+        </a>
+    </div>
+
+    <!-- ==================== MODAL: TRUCK DETAILS & QUICK QUOTE ==================== -->
+    <div id="truck-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-900/70 backdrop-blur-sm p-4 flex items-center justify-center">
+        <div class="bg-white rounded-3xl max-w-3xl w-full shadow-2xl overflow-hidden my-8 animate-[fadeIn_0.2s_ease-out]">
+            <!-- Modal Header -->
+            <div class="bg-thaco-blue text-white px-6 py-4 flex justify-between items-center">
+                <div>
+                    <span id="modal-category-badge" class="text-[11px] uppercase tracking-wider bg-white/20 px-2.5 py-0.5 rounded-full font-semibold">THACO AUTO</span>
+                    <h3 id="modal-title" class="text-xl sm:text-2xl font-extrabold mt-1">Chi Tiết Dòng Xe</h3>
+                </div>
+                <button onclick="closeModal()" aria-label="Đóng cửa sổ" class="w-9 h-9 rounded-full bg-white/15 hover:bg-white/30 flex items-center justify-center text-white transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6 sm:p-8 max-h-[82vh] overflow-y-auto space-y-6">
+                <!-- Technical Specs Table (Hidden if general quote mode) -->
+                <div id="modal-specs-container" class="space-y-4">
+                    <div class="bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-200">
+                            <span class="text-sm font-bold text-slate-600">Giá chassis tham khảo:</span>
+                            <span id="modal-price" class="text-xl sm:text-2xl font-extrabold text-thaco-red">0 VNĐ</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                            <div class="bg-white p-3 rounded-xl border border-slate-100">
+                                <span class="text-slate-400 text-xs block">Tải trọng cho phép</span>
+                                <strong id="modal-payload" class="text-slate-800 font-bold">-</strong>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-slate-100">
+                                <span class="text-slate-400 text-xs block">Kích thước lọt lòng thùng</span>
+                                <strong id="modal-box" class="text-slate-800 font-bold">-</strong>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-slate-100">
+                                <span class="text-slate-400 text-xs block">Động cơ & Dung tích</span>
+                                <strong id="modal-engine" class="text-slate-800 font-bold">-</strong>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-slate-100">
+                                <span class="text-slate-400 text-xs block">Hộp số & Tiêu chuẩn khí thải</span>
+                                <strong id="modal-transmission" class="text-slate-800 font-bold">-</strong>
+                            </div>
+                        </div>
+                        <p id="modal-desc" class="text-sm text-slate-600 mt-3 leading-relaxed"></p>
+                    </div>
+                </div>
+
+                <!-- Quick Rolling Price Quote Form -->
+                <div class="bg-thaco-light/70 border border-sky-200 rounded-2xl p-5 sm:p-6">
+                    <h4 class="text-lg font-extrabold text-thaco-dark flex items-center">
+                        <i class="fa-solid fa-file-invoice-dollar text-thaco-red mr-2"></i>
+                        Nhận Báo Giá Lăn Bánh & Khuyến Mãi Mới Nhất
+                    </h4>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1 mb-4">
+                        Điền thông tin bên dưới để nhận bảng chiết tính chi phí lăn bánh tại Đồng Tháp (bao gồm giá thùng, thuế trước bạ, bảo hiểm, đăng ký).
+                    </p>
+
+                    <form id="modal-quote-form" class="space-y-4">
+                        <input type="hidden" id="quote-truck-name" value="">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Họ và tên khách hàng *</label>
+                                <input type="text" id="quote-customer-name" required placeholder="VD: Anh Minh" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-thaco-blue">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Số điện thoại / Zalo *</label>
+                                <input type="tel" id="quote-customer-phone" required placeholder="VD: 0911 xxx xxx" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-thaco-blue">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Loại thùng quan tâm</label>
+                                <select id="quote-box-type" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-thaco-blue">
+                                    <option value="Thùng mui bạt">Thùng mui bạt</option>
+                                    <option value="Thùng kín">Thùng kín</option>
+                                    <option value="Thùng lửng">Thùng lửng</option>
+                                    <option value="Thùng đông lạnh / Chuyên dụng">Thùng đông lạnh / Chuyên dụng</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Hình thức thanh toán</label>
+                                <select id="quote-payment-type" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-thaco-blue">
+                                    <option value="Mua trả góp qua ngân hàng (70-75%)">Mua trả góp qua ngân hàng (70-75%)</option>
+                                    <option value="Thanh toán tiền mặt 100%">Thanh toán tiền mặt 100%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                            <button type="submit" class="flex-1 bg-thaco-red hover:bg-thaco-redHover text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>GỬI YÊU CẦU BÁO GIÁ</span>
+                            </button>
+                            <a href="tel:0911828846" class="sm:w-auto bg-thaco-blue hover:bg-thaco-dark text-white font-bold py-3.5 px-6 rounded-xl transition flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>GỌI 0911 828 846</span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CUSTOM TOAST NOTIFICATION ==================== -->
+    <div id="toast-box" class="fixed top-20 right-4 z-50 hidden max-w-sm bg-emerald-600 text-white px-5 py-4 rounded-2xl shadow-2xl border border-emerald-400 flex items-start space-x-3">
+        <i class="fa-solid fa-circle-check text-xl mt-0.5"></i>
+        <div>
+            <h5 class="font-bold text-sm">Đã Gửi Yêu Cầu Thành Công!</h5>
+            <p id="toast-message" class="text-xs text-emerald-100 mt-1">Chuyên viên Thaco Đồng Tháp (0911 828 846) sẽ liên hệ báo giá cho anh/chị trong ít phút.</p>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+    <script>
+        // 1. Dữ liệu danh mục xe tải Thaco thực tế
+        const trucksData = [
+            {
+                id: 'tf220',
+                name: 'Thaco Frontier TF220',
+                category: 'frontier-towner',
+                categoryLabel: 'Thaco Frontier',
+                badge: 'Tải nhẹ máy xăng',
+                payload: '990 kg',
+                boxSize: '2.300 x 1.530 x 1.420 mm',
+                engine: 'DK12-10 (Xăng), 1.240 cc, 88 Ps',
+                transmission: '5 số tiến, 1 số lùi - Euro 5',
+                priceText: 'Từ 224.000.000 đ',
+                priceNumber: 224000000,
+                accentColor: '#004B8D',
+                description: 'Thaco Frontier TF220 là dòng xe tải nhẹ máy xăng thế hệ mới thiết kế nhỏ gọn, linh hoạt di chuyển vào các tuyến đường nông thôn, hẻm nhỏ tại Đồng Tháp. Trang bị phanh ABS, màn hình giải trí AVN và camera lùi.'
+            },
+            {
+                id: 'tf230',
+                name: 'Thaco Frontier TF230',
+                category: 'frontier-towner',
+                categoryLabel: 'Thaco Frontier',
+                badge: 'Thùng dài 2.8m',
+                payload: '990 kg',
+                boxSize: '2.800 x 1.680 x 1.600 mm',
+                engine: 'DAM16KR (Xăng), 1.597 cc, 122 Ps',
+                transmission: '5 số tiến, 1 số lùi - Euro 5',
+                priceText: 'Từ 249.000.000 đ',
+                priceNumber: 249000000,
+                accentColor: '#0284C7',
+                description: 'Sở hữu kích thước thùng dài vượt trội lên đến 2.8m trong phân khúc dưới 1 tấn cùng động cơ công nghệ Mitsubishi mạnh mẽ, tiết kiệm nhiên liệu.'
+            },
+            {
+                id: 'towner',
+                name: 'Thaco Towner 800A / 990',
+                category: 'frontier-towner',
+                categoryLabel: 'Thaco Towner',
+                badge: 'Kinh tế - Thu hồi vốn nhanh',
+                payload: '850 kg - 990 kg',
+                boxSize: '2.140 - 2.450 mm (Dài)',
+                engine: 'Công nghệ Suzuki K14B-A, 1.372 cc',
+                transmission: '5 số tiến, 1 số lùi - Euro 4/5',
+                priceText: 'Từ 215.000.000 đ',
+                priceNumber: 215000000,
+                accentColor: '#0369A1',
+                description: 'Dòng xe tải nhẹ quốc dân đã khẳng định chất lượng tại Việt Nam, chi phí đầu tư ban đầu thấp, phụ tùng rẻ và dễ bảo dưỡng.'
+            },
+            {
+                id: 'kia-k200',
+                name: 'Kia Frontier K200',
+                category: 'kia',
+                categoryLabel: 'Kia Frontier',
+                badge: 'Bán chạy số 1 phân khúc',
+                payload: '990 kg / 1.49 Tấn / 1.9 Tấn',
+                boxSize: '3.200 x 1.670 x 1.830 mm',
+                engine: 'Hyundai D4CB (Dầu), 2.497 cc, 130 Ps',
+                transmission: '6 số tiến, 1 số lùi - Turbo tăng áp',
+                priceText: 'Từ 395.000.000 đ',
+                priceNumber: 395000000,
+                accentColor: '#004B8D',
+                description: 'Kia Frontier K200 sử dụng động cơ Hyundai D4CB bền bỉ, cabin kiểu dáng hiện đại sơn tĩnh điện Metalic cao cấp, 3 tải trọng linh hoạt đáp ứng mọi nhu cầu chở hàng.'
+            },
+            {
+                id: 'kia-k250',
+                name: 'Kia Frontier K250',
+                category: 'kia',
+                categoryLabel: 'Kia Frontier',
+                badge: 'Trang bị phanh ABS & ESC',
+                payload: '1.49 Tấn / 2.49 Tấn',
+                boxSize: '3.500 x 1.670 x 1.670 mm',
+                engine: 'Hyundai D4CB (Dầu), 2.497 cc, 130 Ps',
+                transmission: '6 số tiến, 1 số lùi - Phanh ABS/ESC',
+                priceText: 'Từ 455.000.000 đ',
+                priceNumber: 455000000,
+                accentColor: '#1D4ED8',
+                description: 'Phiên bản tải trọng 2.49 tấn chạy trong thành phố ban ngày, trang bị hệ thống chống bó cứng phanh ABS và cân bằng điện tử ESC an toàn vượt trội trên đường trơn trượt.'
+            },
+            {
+                id: 'linker-fuso',
+                name: 'Thaco Linker & Fuso Canter',
+                category: 'linker-fuso',
+                categoryLabel: 'Thaco Linker / Fuso',
+                badge: 'Tải trung thế hệ mới',
+                payload: '1.9 Tấn - 3.5 Tấn - 5 Tấn',
+                boxSize: '3.600 - 5.200 mm (Thùng dài)',
+                engine: 'Weichai / Mitsubishi Fuso 4P10',
+                transmission: '5 - 6 cấp, khung gầm chịu tải cao',
+                priceText: 'Từ 468.000.000 đ',
+                priceNumber: 468000000,
+                accentColor: '#0F172A',
+                description: 'Bộ đôi xe tải trung thế hệ mới Thaco Linker và Mitsubishi Fuso Canter công nghệ Nhật Bản, khung chassis siêu cứng vững, chuyên trị hàng nặng và đường dài.'
+            }
+        ];
+
+        // 2. Hàm tạo SVG minh họa xe tải đẹp mắt theo màu sắc từng dòng
+        function generateTruckSVG(color, label) {
+            return `
+            <svg viewBox="0 0 320 150" class="w-full h-36 mx-auto drop-shadow-sm" xmlns="http://www.w3.org/2000/svg">
+                <rect x="15" y="132" width="290" height="4" rx="2" fill="#CBD5E1"/>
+                <!-- Thùng xe -->
+                <rect x="28" y="30" width="165" height="84" rx="6" fill="${color}"/>
+                <rect x="34" y="36" width="153" height="72" rx="3" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="5 3"/>
+                <text x="110" y="70" fill="#FFFFFF" font-family="Inter, sans-serif" font-weight="800" font-size="14" text-anchor="middle">${label.toUpperCase()}</text>
+                <text x="110" y="88" fill="#E0F2FE" font-family="Inter, sans-serif" font-weight="600" font-size="9" text-anchor="middle">THACO AUTO ĐỒNG THÁP</text>
+                <!-- Khung gầm -->
+                <rect x="25" y="114" width="260" height="8" rx="3" fill="#334155"/>
+                <!-- Cabin -->
+                <path d="M198 48 L248 48 C257 48 263 54 268 66 L280 90 C283 96 285 102 285 110 L285 116 L198 116 Z" fill="#F8FAFC" stroke="${color}" stroke-width="2.5"/>
+                <path d="M226 54 L246 54 C252 54 257 59 261 68 L268 83 L226 83 Z" fill="#0284C7"/>
+                <rect x="204" y="54" width="17" height="29" rx="2" fill="#0369A1"/>
+                <rect x="276" y="96" width="9" height="10" rx="2" fill="#FBBF24"/>
+                <!-- Bánh xe -->
+                <circle cx="76" cy="122" r="16" fill="#0F172A"/>
+                <circle cx="76" cy="122" r="7" fill="#94A3B8"/>
+                <circle cx="248" cy="122" r="16" fill="#0F172A"/>
+                <circle cx="248" cy="122" r="7" fill="#94A3B8"/>
+            </svg>`;
+        }
+
+        // 3. Render danh sách thẻ xe tải
+        const truckGrid = document.getElementById('truck-grid');
+        function renderTrucks(filter = 'all') {
+            truckGrid.innerHTML = '';
+            const filtered = filter === 'all'
+                ? trucksData
+                : trucksData.filter(t => t.category === filter);
+
+            filtered.forEach(truck => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl transition duration-300 flex flex-col overflow-hidden group';
+                card.innerHTML = `
+                    <!-- Card Image / Illustration Header -->
+                    <div class="bg-gradient-to-b from-slate-100 to-white p-5 relative border-b border-slate-100">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="bg-thaco-blue/10 text-thaco-blue text-xs font-bold px-3 py-1 rounded-full">${truck.categoryLabel}</span>
+                            <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-full">${truck.badge}</span>
+                        </div>
+                        <div class="transform group-hover:scale-105 transition duration-300">
+                            ${generateTruckSVG(truck.accentColor, truck.name)}
+                        </div>
+                    </div>
+
+                    <!-- Card Content -->
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+                        <div>
+                            <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-thaco-blue transition">${truck.name}</h3>
+                            <p class="text-thaco-red font-extrabold text-lg mt-1">${truck.priceText}</p>
+
+                            <ul class="mt-4 space-y-2.5 text-sm text-slate-600 border-t border-slate-100 pt-4">
+                                <li class="flex items-start space-x-2.5">
+                                    <i class="fa-solid fa-weight-hanging text-thaco-blue mt-1 w-4"></i>
+                                    <span><strong>Tải trọng:</strong> ${truck.payload}</span>
+                                </li>
+                                <li class="flex items-start space-x-2.5">
+                                    <i class="fa-solid fa-ruler-combined text-thaco-blue mt-1 w-4"></i>
+                                    <span><strong>Lòng thùng:</strong> ${truck.boxSize}</span>
+                                </li>
+                                <li class="flex items-start space-x-2.5">
+                                    <i class="fa-solid fa-gears text-thaco-blue mt-1 w-4"></i>
+                                    <span><strong>Động cơ:</strong> ${truck.engine}</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="pt-2 flex gap-2.5">
+                            <button onclick="openTruckDetail('${truck.id}')" class="flex-1 bg-thaco-blue hover:bg-thaco-dark text-white font-bold py-3 px-4 rounded-xl text-sm transition shadow-sm flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span>Xem chi tiết / Báo giá</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                truckGrid.appendChild(card);
+            });
+        }
+
+        // Khởi tạo danh sách xe ban đầu
+        renderTrucks('all');
+
+        // 4. Xử lý bộ lọc danh mục xe
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-thaco-blue', 'text-white', 'shadow-sm');
+                    b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                });
+                btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                btn.classList.add('bg-thaco-blue', 'text-white', 'shadow-sm');
+
+                renderTrucks(btn.getAttribute('data-filter'));
+            });
+        });
+
+        // 5. Công cụ tính dự toán trả góp
+        const calcTruckSelect = document.getElementById('calc-truck-select');
+        const calcPrice = document.getElementById('calc-price');
+        const calcDownPercent = document.getElementById('calc-down-percent');
+        const calcYears = document.getElementById('calc-years');
+        const calcRate = document.getElementById('calc-rate');
+
+        function formatVND(amount) {
+            return Math.round(amount).toLocaleString('vi-VN') + ' đ';
+        }
+
+        function calculateInstallment() {
+            const price = Math.max(0, parseFloat(calcPrice.value) || 0);
+            const downPercent = parseFloat(calcDownPercent.value) || 30;
+            const years = parseInt(calcYears.value) || 5;
+            const annualRate = Math.max(0, parseFloat(calcRate.value) || 8.5);
+
+            const loanPercent = 100 - downPercent;
+            document.getElementById('down-percent-label').textContent = `${downPercent}% (Vay ${loanPercent}%)`;
+
+            const downAmount = price * (downPercent / 100);
+            const loanAmount = price - downAmount;
+            const totalMonths = years * 12;
+
+            // Tính gốc hàng tháng & lãi tháng đầu theo dư nợ giảm dần
+            const monthlyPrincipal = loanAmount / totalMonths;
+            const firstMonthInterest = loanAmount * ((annualRate / 100) / 12);
+            const totalFirstMonth = monthlyPrincipal + firstMonthInterest;
+
+            document.getElementById('res-down-amount').textContent = formatVND(downAmount);
+            document.getElementById('res-loan-amount').textContent = formatVND(loanAmount);
+            document.getElementById('res-monthly-principal').textContent = formatVND(monthlyPrincipal);
+            document.getElementById('res-first-interest').textContent = formatVND(firstMonthInterest);
+            document.getElementById('res-total-first-month').textContent = formatVND(totalFirstMonth);
+        }
+
+        calcTruckSelect.addEventListener('change', (e) => {
+            calcPrice.value = e.target.value;
+            calculateInstallment();
+        });
+
+        [calcPrice, calcDownPercent, calcYears, calcRate].forEach(el => {
+            el.addEventListener('input', calculateInstallment);
+        });
+
+        // Chạy tính toán mặc định khi tải trang
+        calculateInstallment();
+
+        // 6. Xử lý Modal Chi tiết & Báo giá
+        const truckModal = document.getElementById('truck-modal');
+        const specsContainer = document.getElementById('modal-specs-container');
+
+        function openTruckDetail(truckId) {
+            const truck = trucksData.find(t => t.id === truckId);
+            if (!truck) return;
+
+            specsContainer.classList.remove('hidden');
+            document.getElementById('modal-category-badge').textContent = truck.categoryLabel;
+            document.getElementById('modal-title').textContent = truck.name;
+            document.getElementById('modal-price').textContent = truck.priceText;
+            document.getElementById('modal-payload').textContent = truck.payload;
+            document.getElementById('modal-box').textContent = truck.boxSize;
+            document.getElementById('modal-engine').textContent = truck.engine;
+            document.getElementById('modal-transmission').textContent = truck.transmission;
+            document.getElementById('modal-desc').textContent = truck.description;
+            document.getElementById('quote-truck-name').value = truck.name;
+
+            truckModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openQuoteModal(subjectTitle) {
+            specsContainer.classList.add('hidden');
+            document.getElementById('modal-category-badge').textContent = 'THACO AUTO ĐỒNG THÁP';
+            document.getElementById('modal-title').textContent = subjectTitle;
+            document.getElementById('quote-truck-name').value = subjectTitle;
+
+            truckModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            truckModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Đóng modal khi click ra ngoài vùng nội dung
+        truckModal.addEventListener('click', (e) => {
+            if (e.target === truckModal) closeModal();
+        });
+
+        // 7. Xử lý Form gửi yêu cầu báo giá & Toast thông báo
+        function showToast(customMsg) {
+            const toast = document.getElementById('toast-box');
+            if (customMsg) {
+                document.getElementById('toast-message').textContent = customMsg;
+            }
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 5000);
+        }
+
+        document.getElementById('modal-quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('quote-customer-name').value;
+            const phone = document.getElementById('quote-customer-phone').value;
+            const truckName = document.getElementById('quote-truck-name').value;
+
+            closeModal();
+            this.reset();
+            showToast(`Cảm ơn ${name} (${phone})! Chuyên viên Thaco Đồng Tháp sẽ gọi báo giá dòng xe "${truckName}" ngay.`);
+        });
+
+        document.getElementById('footer-quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.reset();
+            showToast('Đã nhận thông tin tư vấn! Hotline 0911 828 846 sẽ liên hệ lại với anh/chị trong ít phút.');
+        });
+
+        // 8. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
