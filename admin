@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Quản Trị - Thaco Đồng Tháp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-slate-100 font-sans text-slate-800">
+
+    <!-- MÀN HÌNH ĐĂNG NHẬP -->
+    <div id="login-screen" class="min-h-screen flex items-center justify-center px-4">
+        <div class="bg-white p-8 rounded-3xl shadow-xl max-w-md w-full space-y-6">
+            <div class="text-center">
+                <div class="bg-blue-600 text-white font-extrabold px-4 py-2 rounded-xl inline-block text-lg mb-2">THACO ADMIN</div>
+                <h2 class="text-xl font-bold">Đăng Nhập Trang Quản Trị</h2>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold mb-1">Mật khẩu quản trị (Mặc định: admin123)</label>
+                    <input type="password" id="admin-pass" placeholder="Nhập mật khẩu..." class="w-full border rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                </div>
+                <button onclick="handleLogin()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl text-sm transition">ĐĂNG NHẬP</button>
+                <p id="login-error" class="hidden text-red-500 text-xs text-center">Mật khẩu không đúng! (Mặc định: admin123)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MÀN HÌNH QUẢN TRỊ CHÍNH -->
+    <div id="admin-dashboard" class="hidden min-h-screen pb-20">
+        <header class="bg-slate-900 text-white py-4 px-6 shadow flex justify-between items-center">
+            <h1 class="text-lg font-bold">🚗 Quản Trị Website Thaco Đồng Tháp</h1>
+            <button onclick="location.reload()" class="bg-red-600 px-4 py-2 rounded-xl text-xs font-bold hover:bg-red-700">Đăng Xuất</button>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 py-8 space-y-12">
+            
+            <!-- DANH SÁCH SỐ ĐIỆN THOẠI KHÁCH HÀNG -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border">
+                <h3 class="text-lg font-bold mb-4 text-blue-600"><i class="fa-solid fa-users mr-2"></i> Danh Sách Khách Hàng Đăng Ký Tư Vấn</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-slate-50 border-b text-slate-500">
+                                <th class="p-3">Thời gian</th>
+                                <th class="p-3">Họ và tên</th>
+                                <th class="p-3">Số điện thoại / Zalo</th>
+                                <th class="p-3 text-right">Thao tác nhanh</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leads-table-body">
+                            <tr><td colspan="4" class="p-4 text-center text-slate-400">Đang tải danh sách khách hàng...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- QUẢN LÝ XE & HÌNH ẢNH -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border space-y-6">
+                <h3 class="text-lg font-bold text-blue-600"><i class="fa-solid fa-truck-fast mr-2"></i> Quản Lý Danh Sách Xe & Hình Ảnh</h3>
+
+                <!-- Form thêm xe mới -->
+                <form id="add-truck-form" class="bg-slate-50 p-6 rounded-2xl border space-y-4">
+                    <h4 class="font-bold text-sm text-slate-700">Thêm Xe Tải Mới Lên Website</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <input type="text" id="truck-name" required placeholder="Tên xe (VD: Kia K200)" class="border rounded-xl px-4 py-2.5 text-sm bg-white">
+                        <input type="text" id="truck-payload" required placeholder="Tải trọng (VD: 1.9 Tấn)" class="border rounded-xl px-4 py-2.5 text-sm bg-white">
+                        <input type="text" id="truck-price" required placeholder="Giá bán (VD: 395.000.000)" class="border rounded-xl px-4 py-2.5 text-sm bg-white">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" id="truck-engine" required placeholder="Kiểu động cơ / Mô tả ngắn" class="border rounded-xl px-4 py-2.5 text-sm bg-white">
+                        <input type="url" id="truck-image-url" required placeholder="Dán link ảnh xe vào đây (VD: link ảnh từ Facebook, Google...)" class="border rounded-xl px-4 py-2.5 text-sm bg-white">
+                    </div>
+                    <textarea id="truck-desc" required placeholder="Mô tả chi tiết về xe..." class="w-full border rounded-xl p-3 text-sm bg-white h-20"></textarea>
+                    <button type="submit" id="save-truck-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl text-sm shadow">ĐĂNG XE LÊN WEBSITE</button>
+                </form>
+
+                <!-- Bảng danh sách xe -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-slate-50 border-b text-slate-500">
+                                <th class="p-3">Hình ảnh</th>
+                                <th class="p-3">Tên xe</th>
+                                <th class="p-3">Tải trọng</th>
+                                <th class="p-3">Giá bán</th>
+                                <th class="p-3 text-right">Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-trucks-table">
+                            <tr><td colspan="5" class="p-4 text-center text-slate-400">Đang tải danh sách xe...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- SCRIPT -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAgi3NJANuR1os32QtThkc4bhjXPOFEaDw",
+            authDomain: "website-178d5.firebaseapp.com",
+            projectId: "website-178d5",
+            storageBucket: "website-178d5.firebasestorage.app",
+            messagingSenderId: "644118537675",
+            appId: "1:644118537675:web:749d08e08e5c6fe7d3024e",
+            measurementId: "G-ZQK33KWV6S"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        window.handleLogin = function() {
+            const pass = document.getElementById('admin-pass').value;
+            if (pass === 'admin123') {
+                document.getElementById('login-screen').classList.add('hidden');
+                document.getElementById('admin-dashboard').classList.remove('hidden');
+                loadAdminData();
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
+            }
+        }
+
+        async function loadAdminData() {
+            const leadsBody = document.getElementById('leads-table-body');
+            try {
+                const leadSnap = await getDocs(collection(db, "leads"));
+                if (leadSnap.empty) {
+                    leadsBody.innerHTML = '<tr><td colspan="4" class="p-4 text-center text-slate-400">Chưa có khách hàng nào đăng ký.</td></tr>';
+                } else {
+                    leadsBody.innerHTML = '';
+                    leadSnap.forEach(d => {
+                        const l = d.data();
+                        leadsBody.innerHTML += `
+                            <tr class="border-b hover:bg-slate-50">
+                                <td class="p-3 text-xs text-slate-500">${l.createdAt || 'N/A'}</td>
+                                <td class="p-3 font-bold">${l.name}</td>
+                                <td class="p-3 font-bold text-blue-600">${l.phone}</td>
+                                <td class="p-3 text-right space-x-2">
+                                    <a href="tel:${l.phone}" class="bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold"><i class="fa-solid fa-phone"></i> Gọi</a>
+                                    <a href="https://zalo.me/${l.phone}" target="_blank" class="bg-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold"><i class="fa-solid fa-comment"></i> Zalo</a>
+                                    <button onclick="deleteLead('${d.id}')" class="bg-red-100 text-red-600 px-2 py-1.5 rounded-lg text-xs font-bold">Xóa</button>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                }
+            } catch (e) {
+                leadsBody.innerHTML = '<tr><td colspan="4" class="p-4 text-center text-red-500">Lỗi tải dữ liệu khách hàng.</td></tr>';
+            }
+
+            const truckTable = document.getElementById('admin-trucks-table');
+            try {
+                const truckSnap = await getDocs(collection(db, "trucks"));
+                if (truckSnap.empty) {
+                    truckTable.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-slate-400">Chưa có xe nào.</td></tr>';
+                } else {
+                    truckTable.innerHTML = '';
+                    truckSnap.forEach(d => {
+                        const t = d.data();
+                        truckTable.innerHTML += `
+                            <tr class="border-b hover:bg-slate-50">
+                                <td class="p-3"><img src="${t.imageUrl}" class="w-16 h-12 object-cover rounded-lg border"></td>
+                                <td class="p-3 font-bold">${t.name}</td>
+                                <td class="p-3">${t.payload}</td>
+                                <td class="p-3 font-bold text-red-600">${t.price} đ</td>
+                                <td class="p-3 text-right">
+                                    <button onclick="deleteTruck('${d.id}')" class="bg-red-100 text-red-600 hover:bg-red-200 px-3 py-1.5 rounded-lg text-xs font-bold">Xóa</button>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                }
+            } catch (e) {
+                truckTable.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-red-500">Lỗi tải danh sách xe.</td></tr>';
+            }
+        }
+
+        document.getElementById('add-truck-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('save-truck-btn');
+            btn.disabled = true;
+            btn.textContent = "Đang lưu xe...";
+
+            try {
+                await addDoc(collection(db, "trucks"), {
+                    name: document.getElementById('truck-name').value,
+                    payload: document.getElementById('truck-payload').value,
+                    price: document.getElementById('truck-price').value,
+                    engine: document.getElementById('truck-engine').value,
+                    desc: document.getElementById('truck-desc').value,
+                    imageUrl: document.getElementById('truck-image-url').value
+                });
+
+                alert("Thêm xe thành công!");
+                document.getElementById('add-truck-form').reset();
+                loadAdminData();
+            } catch (err) {
+                alert("Lỗi khi thêm xe: " + err.message);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = "ĐĂNG XE LÊN WEBSITE";
+            }
+        });
+
+        window.deleteTruck = async function(id) {
+            if (confirm("Xóa chiếc xe này?")) {
+                await deleteDoc(doc(db, "trucks", id));
+                loadAdminData();
+            }
+        }
+
+        window.deleteLead = async function(id) {
+            if (confirm("Xóa thông tin khách hàng này?")) {
+                await deleteDoc(doc(db, "leads", id));
+                loadAdminData();
+            }
+        }
+    </script>
+</body>
+</html>
