@@ -449,12 +449,14 @@
                     <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6">
                         <h4 class="text-white font-bold text-base mb-2">Đăng Ký Nhận Báo Giá Nhanh</h4>
                         <p class="text-xs text-slate-400 mb-4">Để lại số điện thoại, Chuyên viên tư vấn Thaco Đồng Tháp sẽ gọi lại báo giá lăn bánh tốt nhất ngay!</p>
-                      <form name="contact" method="POST" action="/?success=true" netlify netlify-honeypot="bot-field" id="footer-quote-form" class="space-y-3">
-  <!-- Thẻ ẩn chống spam bot -->
-  <input type="hidden" name="bot-field" />
-  <!-- Thẻ ẩn nhận diện form của Netlify -->
-  <input type="hidden" name="form-name" value="contact" />
-  
+                     <form action="https://formsubmit.co/nguyenhuuphuoc41099@gmail.com" method="POST" id="footer-quote-form" class="space-y-3">
+  <!-- Tắt trang xác nhận captcha mặc định của bên thứ ba để form mượt mà -->
+  <input type="hidden" name="_captcha" value="false">
+  <!-- Tiêu đề email khi gửi về Gmail của anh -->
+  <input type="hidden" name="_subject" value="Có khách hàng mới đăng ký tư vấn xe tải Thaco!">
+  <!-- Chuyển hướng về lại trang chủ sau khi gửi thành công -->
+  <input type="hidden" name="_next" value="https://xetaithacodongthap.xyz/?sent=true">
+
   <input type="text" name="name" required placeholder="Họ và tên anh/chị *" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white">
   <input type="tel" name="phone" required placeholder="Số điện thoại / Zalo *" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white">
   <button type="submit" class="w-full bg-thaco-red hover:bg-thaco-redHover text-white font-bold py-3 rounded-xl text-sm transition shadow-md">
