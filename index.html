@@ -20,12 +20,6 @@
 </head>
 <body class="font-sans text-slate-800 bg-slate-50 antialiased">
 
-    <!-- NÚT QUẢN TRỊ NHANH NỔI TRÊN MÀN HÌNH -->
-    <button onclick="showAdminLogin()" class="fixed bottom-6 left-6 z-50 bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-3 rounded-full shadow-2xl flex items-center space-x-2 text-xs border border-slate-700 transition">
-        <i class="fa-solid fa-lock text-amber-400"></i>
-        <span>Quản Trị Admin</span>
-    </button>
-
     <!-- GIAO DIỆN KHÁCH HÀNG -->
     <div id="client-view">
         <!-- TOP BAR -->
@@ -36,18 +30,18 @@
             </div>
         </div>
 
-        <!-- HEADER -->
+        <!-- HEADER (BẤM VÀO LOGO THACO ĐỂ MỞ QUẢN TRỊ ADMIN) -->
         <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 sm:h-20">
-                <a href="#" class="flex items-center space-x-3">
-                    <div class="bg-thaco-blue text-white font-extrabold px-3 py-1.5 rounded-lg tracking-wider text-lg sm:text-xl">
+                <div onclick="checkAdminSecret()" class="flex items-center space-x-3 cursor-pointer group" title="Bấm 1 lần để mở Quản trị Admin">
+                    <div class="bg-thaco-blue group-hover:bg-thaco-red text-white font-extrabold px-3 py-1.5 rounded-lg tracking-wider text-lg sm:text-xl transition">
                         THACO <span class="font-light text-sky-200">AUTO</span>
                     </div>
                     <div class="hidden sm:block border-l border-slate-200 pl-3">
                         <p class="text-xs font-bold text-thaco-blue uppercase">Chi Nhánh Đồng Tháp</p>
                         <p class="text-[11px] text-slate-500">Xe Tải & Bus Chính Hãng</p>
                     </div>
-                </a>
+                </div>
                 <div class="flex items-center space-x-3">
                     <a href="tel:0911828846" class="inline-flex items-center bg-thaco-red hover:bg-thaco-redHover text-white font-bold px-4 py-2.5 rounded-full shadow-md text-sm">
                         <i class="fa-solid fa-phone-volume mr-2 animate-pulse"></i> 0911 828 846
@@ -216,7 +210,7 @@
             try {
                 const querySnapshot = await getDocs(collection(db, "trucks"));
                 if (querySnapshot.empty) {
-                    grid.innerHTML = '<p class="text-center col-span-full text-slate-500 py-10">Chưa có xe nào. Vui lòng vào Quản Trị Admin để thêm xe.</p>';
+                    grid.innerHTML = '<p class="text-center col-span-full text-slate-500 py-10">Chưa có xe nào. Bấm vào logo THACO ở góc trái trên cùng để vào Quản trị thêm xe.</p>';
                     return;
                 }
                 grid.innerHTML = '';
@@ -279,7 +273,7 @@
             }
         });
 
-        window.showAdminLogin = function() {
+        window.checkAdminSecret = function() {
             document.getElementById('admin-login-modal').classList.remove('hidden');
         }
 
